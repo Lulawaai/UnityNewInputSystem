@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 	[Header("Player Move")]
 	[SerializeField] private float _speed;
 	[SerializeField] private float _rotSpeed;
+
 	private Vector3 direction;
 
 	public void Move(Vector2 move)

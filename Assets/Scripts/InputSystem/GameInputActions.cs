@@ -35,6 +35,15 @@ public partial class @GameInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""DroneSwitch"",
+                    ""type"": ""Button"",
+                    ""id"": ""2b0f3567-c019-4967-ae89-b3e30d99ccd1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -147,6 +156,184 @@ public partial class @GameInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8bbfd12d-7d34-4076-a0bd-0b05ecb7babe"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DroneSwitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Drone"",
+            ""id"": ""2b6d5cc5-bed7-4131-ade8-36dd0c75b635"",
+            ""actions"": [
+                {
+                    ""name"": ""Moves"",
+                    ""type"": ""Value"",
+                    ""id"": ""04113d4c-feb2-4361-b7f7-30346d14dec1"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Thrust"",
+                    ""type"": ""Button"",
+                    ""id"": ""bb765f53-5cf3-4bbf-a5e0-f450120f8f0a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PlayerSwitch"",
+                    ""type"": ""Button"",
+                    ""id"": ""48010889-28a6-47a1-8e83-9cc656681ddb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""f7f5e183-fdc3-4550-8045-921d42d8c87c"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Moves"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""84f5d8cd-db98-440d-b877-983464d18249"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Moves"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""dc9daa0c-1695-4501-be22-89399eff26a8"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Moves"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""33419516-deb0-4cf5-8806-743c70421077"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Moves"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""6560ca8f-ba54-4d03-8c17-cb505b955400"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Moves"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Arrows"",
+                    ""id"": ""8e8e17da-6dc9-4dcb-8b9c-3dd7537b0ff2"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Moves"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""7365a043-f71e-4765-9f59-3c4738d630f2"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Moves"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""66a60646-a7a9-4f8f-8690-7972d341f773"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Moves"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""b93ca0ec-5c40-45a1-8961-e14be7cfe96d"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Moves"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""f73920ed-55d8-4830-b2d6-eadf90ec7da5"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Moves"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""14b3263a-1392-4098-a8f4-b8eb7a455e48"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Thrust"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0a024d68-dbdc-44e1-8d5e-9fab5aa56b55"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerSwitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -156,6 +343,12 @@ public partial class @GameInputActions : IInputActionCollection2, IDisposable
         // PlayerMoves
         m_PlayerMoves = asset.FindActionMap("PlayerMoves", throwIfNotFound: true);
         m_PlayerMoves_Move = m_PlayerMoves.FindAction("Move", throwIfNotFound: true);
+        m_PlayerMoves_DroneSwitch = m_PlayerMoves.FindAction("DroneSwitch", throwIfNotFound: true);
+        // Drone
+        m_Drone = asset.FindActionMap("Drone", throwIfNotFound: true);
+        m_Drone_Moves = m_Drone.FindAction("Moves", throwIfNotFound: true);
+        m_Drone_Thrust = m_Drone.FindAction("Thrust", throwIfNotFound: true);
+        m_Drone_PlayerSwitch = m_Drone.FindAction("PlayerSwitch", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -216,11 +409,13 @@ public partial class @GameInputActions : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_PlayerMoves;
     private IPlayerMovesActions m_PlayerMovesActionsCallbackInterface;
     private readonly InputAction m_PlayerMoves_Move;
+    private readonly InputAction m_PlayerMoves_DroneSwitch;
     public struct PlayerMovesActions
     {
         private @GameInputActions m_Wrapper;
         public PlayerMovesActions(@GameInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_PlayerMoves_Move;
+        public InputAction @DroneSwitch => m_Wrapper.m_PlayerMoves_DroneSwitch;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMoves; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -233,6 +428,9 @@ public partial class @GameInputActions : IInputActionCollection2, IDisposable
                 @Move.started -= m_Wrapper.m_PlayerMovesActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_PlayerMovesActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_PlayerMovesActionsCallbackInterface.OnMove;
+                @DroneSwitch.started -= m_Wrapper.m_PlayerMovesActionsCallbackInterface.OnDroneSwitch;
+                @DroneSwitch.performed -= m_Wrapper.m_PlayerMovesActionsCallbackInterface.OnDroneSwitch;
+                @DroneSwitch.canceled -= m_Wrapper.m_PlayerMovesActionsCallbackInterface.OnDroneSwitch;
             }
             m_Wrapper.m_PlayerMovesActionsCallbackInterface = instance;
             if (instance != null)
@@ -240,12 +438,71 @@ public partial class @GameInputActions : IInputActionCollection2, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @DroneSwitch.started += instance.OnDroneSwitch;
+                @DroneSwitch.performed += instance.OnDroneSwitch;
+                @DroneSwitch.canceled += instance.OnDroneSwitch;
             }
         }
     }
     public PlayerMovesActions @PlayerMoves => new PlayerMovesActions(this);
+
+    // Drone
+    private readonly InputActionMap m_Drone;
+    private IDroneActions m_DroneActionsCallbackInterface;
+    private readonly InputAction m_Drone_Moves;
+    private readonly InputAction m_Drone_Thrust;
+    private readonly InputAction m_Drone_PlayerSwitch;
+    public struct DroneActions
+    {
+        private @GameInputActions m_Wrapper;
+        public DroneActions(@GameInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Moves => m_Wrapper.m_Drone_Moves;
+        public InputAction @Thrust => m_Wrapper.m_Drone_Thrust;
+        public InputAction @PlayerSwitch => m_Wrapper.m_Drone_PlayerSwitch;
+        public InputActionMap Get() { return m_Wrapper.m_Drone; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DroneActions set) { return set.Get(); }
+        public void SetCallbacks(IDroneActions instance)
+        {
+            if (m_Wrapper.m_DroneActionsCallbackInterface != null)
+            {
+                @Moves.started -= m_Wrapper.m_DroneActionsCallbackInterface.OnMoves;
+                @Moves.performed -= m_Wrapper.m_DroneActionsCallbackInterface.OnMoves;
+                @Moves.canceled -= m_Wrapper.m_DroneActionsCallbackInterface.OnMoves;
+                @Thrust.started -= m_Wrapper.m_DroneActionsCallbackInterface.OnThrust;
+                @Thrust.performed -= m_Wrapper.m_DroneActionsCallbackInterface.OnThrust;
+                @Thrust.canceled -= m_Wrapper.m_DroneActionsCallbackInterface.OnThrust;
+                @PlayerSwitch.started -= m_Wrapper.m_DroneActionsCallbackInterface.OnPlayerSwitch;
+                @PlayerSwitch.performed -= m_Wrapper.m_DroneActionsCallbackInterface.OnPlayerSwitch;
+                @PlayerSwitch.canceled -= m_Wrapper.m_DroneActionsCallbackInterface.OnPlayerSwitch;
+            }
+            m_Wrapper.m_DroneActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Moves.started += instance.OnMoves;
+                @Moves.performed += instance.OnMoves;
+                @Moves.canceled += instance.OnMoves;
+                @Thrust.started += instance.OnThrust;
+                @Thrust.performed += instance.OnThrust;
+                @Thrust.canceled += instance.OnThrust;
+                @PlayerSwitch.started += instance.OnPlayerSwitch;
+                @PlayerSwitch.performed += instance.OnPlayerSwitch;
+                @PlayerSwitch.canceled += instance.OnPlayerSwitch;
+            }
+        }
+    }
+    public DroneActions @Drone => new DroneActions(this);
     public interface IPlayerMovesActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnDroneSwitch(InputAction.CallbackContext context);
+    }
+    public interface IDroneActions
+    {
+        void OnMoves(InputAction.CallbackContext context);
+        void OnThrust(InputAction.CallbackContext context);
+        void OnPlayerSwitch(InputAction.CallbackContext context);
     }
 }
