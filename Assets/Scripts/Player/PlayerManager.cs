@@ -21,6 +21,12 @@ public class PlayerManager : MonoBehaviour
 		_input.PlayerMoves.DroneSwitch.performed += DroneSwitch_performed;
 		_input.Drone.Disable();
 		_input.Drone.PlayerSwitch.performed += PlayerSwitch_performed;
+		_input.Drone.Thrust.performed += Thrust_performed;
+	}
+
+	private void Thrust_performed(InputAction.CallbackContext context)
+	{
+		_drone.Thrust();
 	}
 
 	private void PlayerSwitch_performed(UnityEngine.InputSystem.InputAction.CallbackContext context)

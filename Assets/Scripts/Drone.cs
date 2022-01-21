@@ -5,7 +5,10 @@ using UnityEngine;
 public class Drone : MonoBehaviour
 {
 	[SerializeField] private float _speed;
+	[SerializeField] private float _thrust;
+
 	[SerializeField] private GameObject _camDrone;
+	[SerializeField] private Rigidbody _rBd;
 
 	public void DroneMove(Vector2 move)
 	{
@@ -16,13 +19,18 @@ public class Drone : MonoBehaviour
 		transform.Translate(new Vector3(direction.y, 0, -direction.x) * _speed * Time.deltaTime);
 	}
 
-	public void CameraDroneOn(bool cameraOF)
+	public void CameraDroneOn(bool cameraOff)
 	{
-		if (cameraOF)
+		if (cameraOff)
 		{
 			_camDrone.SetActive(false);
 		}
 		else
 			_camDrone.SetActive(true);
+	}
+
+	public void Thrust()
+	{
+		_rBd.AddForce(transform.up * _thrust);
 	}
 }
