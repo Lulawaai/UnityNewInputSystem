@@ -19,14 +19,14 @@ public class Drone : MonoBehaviour
 		transform.Translate(new Vector3(direction.y, 0, -direction.x) * _speed * Time.deltaTime);
 	}
 
-	public void CameraDroneOn(bool cameraOff)
+	public void CameraDroneOn()
 	{
-		if (cameraOff)
-		{
-			_camDrone.SetActive(false);
-		}
-		else
-			_camDrone.SetActive(true);
+		_camDrone.SetActive(true);
+	}
+
+	public void CameraDroneOFF()
+	{
+		_camDrone.SetActive(false);
 	}
 
 	public void Thrust()

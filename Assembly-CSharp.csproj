@@ -60,6 +60,7 @@
     <Compile Include="Assets/Scripts/InputSystem/GameInputActions.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerManager.cs" />
     <Compile Include="Assets/Scripts/Drone.cs" />
+    <Compile Include="Assets/Scripts/Forklift.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

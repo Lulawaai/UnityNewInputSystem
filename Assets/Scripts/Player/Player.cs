@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-	private GameInputActions _input;
-
 	[Header("Player Move")]
 	[SerializeField] private float _speed;
 	[SerializeField] private float _rotSpeed;

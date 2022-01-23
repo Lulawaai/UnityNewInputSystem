@@ -8,51 +8,80 @@ public class PlayerManager : MonoBehaviour
 {
 	private GameInputActions _input;
 
+	[Header("ActionMaps")]
 	[SerializeField] private Player _player;
 	[SerializeField] private Drone _drone;
+	[SerializeField] private Forklift _forkLift;
 
-	[SerializeField] private bool _isPlayerInput = true;
+	[SerializeField] private int _actionMapActive;
 
 	void Start()
 	{
 		_input = new GameInputActions();
 		_input.Enable();
+
+		//Player
 		_input.PlayerMoves.Enable();
 		_input.PlayerMoves.DroneSwitch.performed += DroneSwitch_performed;
+
+		//Drone
 		_input.Drone.Disable();
-		_input.Drone.PlayerSwitch.performed += PlayerSwitch_performed;
+		_input.Drone.ForkliftSwitch.performed += ForkliftSwitch_performed;
 		_input.Drone.Thrust.performed += Thrust_performed;
+
+		//Forklift
+		_input.Forklift.Disable();
+		_input.Forklift.PlayerSwitch.performed += PlayerSwitch_performed;
+
 	}
 
-	private void Thrust_performed(InputAction.CallbackContext context)
-	{
-		_drone.Thrust();
-	}
+	//order actionMap
+	// 1 - Player
+	// 2 - Drone
+	// 3 - Forklift
 
-	private void PlayerSwitch_performed(UnityEngine.InputSystem.InputAction.CallbackContext context)
+	private void DroneSwitch_performed(InputAction.CallbackContext context)
 	{
-		_isPlayerInput = true;
-		_drone.CameraDroneOn(_isPlayerInput);
-		_input.PlayerMoves.Enable();
-		_input.Drone.Disable();
-	}
-
-	private void DroneSwitch_performed(UnityEngine.InputSystem.InputAction.CallbackContext context)
-	{
-		_isPlayerInput = false;
-		_drone.CameraDroneOn(_isPlayerInput);
+		_actionMapActive = 1;
+		_drone.CameraDroneOn();
 		_input.PlayerMoves.Disable();
 		_input.Drone.Enable();
 	}
 
+	private void ForkliftSwitch_performed(InputAction.CallbackContext context)
+	{
+		_actionMapActive = 2;
+		_input.Forklift.Enable();
+		_forkLift.ForkLiftCamON();
+		_drone.CameraDroneOFF();
+		_input.Drone.Disable();
+	}
+
+	private void PlayerSwitch_performed(InputAction.CallbackContext context)
+	{
+		_actionMapActive = 0;
+		_forkLift.ForkLiftCamOFF();
+		_input.Forklift.Disable();
+		_input.PlayerMoves.Enable();
+
+	}
+
 	void Update()
 	{
-		if (_isPlayerInput == true)
+		switch(_actionMapActive)
 		{
-			movePlayer();
+			case 0:
+				movePlayer();
+				break;
+
+			case 1:
+				moveDrone();
+				break;
+
+			case 2:
+				moveForklift();
+				break;
 		}
-		else
-			moveDrone();
 	}
 
 	private void movePlayer()
@@ -67,7 +96,18 @@ public class PlayerManager : MonoBehaviour
 	{
 		Vector2 move;
 		move = _input.Drone.Moves.ReadValue<Vector2>();
-
 		_drone.DroneMove(move);
+	}
+
+	private void moveForklift()
+	{
+		Vector2 move;
+		move = _input.Forklift.Move.ReadValue<Vector2>();
+		_forkLift.MoveForklift(move);
+	}
+
+	private void Thrust_performed(InputAction.CallbackContext context)
+	{
+		_drone.Thrust();
 	}
 }
