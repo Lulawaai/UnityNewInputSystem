@@ -56,11 +56,16 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/Drone.cs" />
     <Compile Include="Assets/Scripts/Player/Player.cs" />
     <Compile Include="Assets/Scripts/InputSystem/GameInputActions.cs" />
-    <Compile Include="Assets/Scripts/Player/PlayerManager.cs" />
-    <Compile Include="Assets/Scripts/Drone.cs" />
     <Compile Include="Assets/Scripts/Forklift.cs" />
+    <Compile Include="Assets/Scripts/Player/PlayerManager.cs" />
+    <Compile Include="Assets/Scripts/Crate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets/GameDevHQ/FileBase/Plugin/Filebase.dll" />
+    <None Include="Assets/GameDevHQ/FileBase/Plugin/README.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -287,6 +292,9 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Filebase">
+      <HintPath>Assets/GameDevHQ/FileBase/Plugin/Filebase.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>/Applications/Unity/Hub/Editor/2020.3.26f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

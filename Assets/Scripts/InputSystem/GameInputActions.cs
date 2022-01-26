@@ -483,6 +483,34 @@ public partial class @GameInputActions : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Crate"",
+            ""id"": ""02133e65-75c0-4691-b56a-a192bdcedf1d"",
+            ""actions"": [
+                {
+                    ""name"": ""Explode"",
+                    ""type"": ""Button"",
+                    ""id"": ""a52c9b84-1184-481b-95aa-48efe972e0d3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""MultiTap,Hold(duration=10)"",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""ff02e647-6a49-44c0-908c-f3edf611fea0"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Explode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -500,6 +528,9 @@ public partial class @GameInputActions : IInputActionCollection2, IDisposable
         m_Forklift = asset.FindActionMap("Forklift", throwIfNotFound: true);
         m_Forklift_Move = m_Forklift.FindAction("Move", throwIfNotFound: true);
         m_Forklift_PlayerSwitch = m_Forklift.FindAction("PlayerSwitch", throwIfNotFound: true);
+        // Crate
+        m_Crate = asset.FindActionMap("Crate", throwIfNotFound: true);
+        m_Crate_Explode = m_Crate.FindAction("Explode", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -686,6 +717,39 @@ public partial class @GameInputActions : IInputActionCollection2, IDisposable
         }
     }
     public ForkliftActions @Forklift => new ForkliftActions(this);
+
+    // Crate
+    private readonly InputActionMap m_Crate;
+    private ICrateActions m_CrateActionsCallbackInterface;
+    private readonly InputAction m_Crate_Explode;
+    public struct CrateActions
+    {
+        private @GameInputActions m_Wrapper;
+        public CrateActions(@GameInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Explode => m_Wrapper.m_Crate_Explode;
+        public InputActionMap Get() { return m_Wrapper.m_Crate; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CrateActions set) { return set.Get(); }
+        public void SetCallbacks(ICrateActions instance)
+        {
+            if (m_Wrapper.m_CrateActionsCallbackInterface != null)
+            {
+                @Explode.started -= m_Wrapper.m_CrateActionsCallbackInterface.OnExplode;
+                @Explode.performed -= m_Wrapper.m_CrateActionsCallbackInterface.OnExplode;
+                @Explode.canceled -= m_Wrapper.m_CrateActionsCallbackInterface.OnExplode;
+            }
+            m_Wrapper.m_CrateActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Explode.started += instance.OnExplode;
+                @Explode.performed += instance.OnExplode;
+                @Explode.canceled += instance.OnExplode;
+            }
+        }
+    }
+    public CrateActions @Crate => new CrateActions(this);
     public interface IPlayerMovesActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -701,5 +765,9 @@ public partial class @GameInputActions : IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnPlayerSwitch(InputAction.CallbackContext context);
+    }
+    public interface ICrateActions
+    {
+        void OnExplode(InputAction.CallbackContext context);
     }
 }

@@ -12,8 +12,14 @@ public class PlayerManager : MonoBehaviour
 	[SerializeField] private Player _player;
 	[SerializeField] private Drone _drone;
 	[SerializeField] private Forklift _forkLift;
+	[SerializeField] private Crate _crate;
 
 	[SerializeField] private int _actionMapActive;
+
+	[Header("Crate Power")]
+	[SerializeField] private float _softPower;
+	[SerializeField] private float _hardPower;
+	private bool _crateExploded = false;
 
 	void Start()
 	{
@@ -33,6 +39,32 @@ public class PlayerManager : MonoBehaviour
 		_input.Forklift.Disable();
 		_input.Forklift.PlayerSwitch.performed += PlayerSwitch_performed;
 
+		//Crate
+		_input.Crate.Enable();
+		_input.Crate.Explode.performed += Explode_performed;
+		_input.Crate.Explode.canceled += Explode_canceled;
+
+	}
+
+	private void Explode_canceled(InputAction.CallbackContext context)
+	{
+		var duration = context.duration;
+
+		if (duration >= 1 && _crateExploded == false)
+		{
+			_crateExploded = true;
+			_crate.DestroyCrate(_hardPower);
+		}
+	}
+
+	private void Explode_performed(InputAction.CallbackContext context)
+	{
+		if (_crateExploded == false)
+		{
+			_crateExploded = true;
+			_crate.DestroyCrate(_softPower);
+		}
+	
 	}
 
 	//order actionMap

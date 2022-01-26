@@ -461,6 +461,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Crate",
+            "id": "02133e65-75c0-4691-b56a-a192bdcedf1d",
+            "actions": [
+                {
+                    "name": "Explode",
+                    "type": "Button",
+                    "id": "a52c9b84-1184-481b-95aa-48efe972e0d3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "MultiTap,Hold(duration=10)",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ff02e647-6a49-44c0-908c-f3edf611fea0",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Explode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
