@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -43,7 +44,6 @@ public class PlayerManager : MonoBehaviour
 		_input.Crate.Enable();
 		_input.Crate.Explode.performed += Explode_performed;
 		_input.Crate.Explode.canceled += Explode_canceled;
-
 	}
 
 	private void Explode_canceled(InputAction.CallbackContext context)
@@ -64,7 +64,6 @@ public class PlayerManager : MonoBehaviour
 			_crateExploded = true;
 			_crate.DestroyCrate(_softPower);
 		}
-	
 	}
 
 	//order actionMap
@@ -95,7 +94,6 @@ public class PlayerManager : MonoBehaviour
 		_forkLift.ForkLiftCamOFF();
 		_input.Forklift.Disable();
 		_input.PlayerMoves.Enable();
-
 	}
 
 	void Update()

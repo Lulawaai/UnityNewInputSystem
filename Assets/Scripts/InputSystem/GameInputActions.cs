@@ -159,8 +159,30 @@ public partial class @GameInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""f10d7dcc-bd2e-494f-a1ea-1a3d38b38dd2"",
+                    ""path"": ""<Joystick>/stick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""8bbfd12d-7d34-4076-a0bd-0b05ecb7babe"",
                     ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DroneSwitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4915aa4c-589e-40ff-b23c-e117ff73d790"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -315,6 +337,17 @@ public partial class @GameInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""d5a4e59b-db00-4d7f-9228-189c166c823d"",
+                    ""path"": ""<Joystick>/stick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Moves"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""14b3263a-1392-4098-a8f4-b8eb7a455e48"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
@@ -326,8 +359,30 @@ public partial class @GameInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""be97d0a5-6d17-4398-92e9-dc47c5ddd98f"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Thrust"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""0a024d68-dbdc-44e1-8d5e-9fab5aa56b55"",
                     ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ForkliftSwitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b5b209df-e721-4702-a465-00e75886c16d"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -473,8 +528,30 @@ public partial class @GameInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""33991c19-4d9c-46e2-b832-25ebe7de4d97"",
+                    ""path"": ""<Joystick>/stick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""0a53cbe7-6952-477d-acc8-3c6e32eb5a69"",
                     ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerSwitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c9e8174a-afac-444d-8c85-1bb6f7355864"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -509,6 +586,45 @@ public partial class @GameInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Explode"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5b3b09de-cb6a-4778-88f9-f0d66982be92"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Explode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""General"",
+            ""id"": ""2b8b3df0-ecfd-4cee-928e-3e9b415bed96"",
+            ""actions"": [
+                {
+                    ""name"": ""ReloadGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""5ad10fbb-33b3-4085-8171-cae8ae5bdd68"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""044a372d-18c7-44f0-9b2d-115493e590e1"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ReloadGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -531,6 +647,9 @@ public partial class @GameInputActions : IInputActionCollection2, IDisposable
         // Crate
         m_Crate = asset.FindActionMap("Crate", throwIfNotFound: true);
         m_Crate_Explode = m_Crate.FindAction("Explode", throwIfNotFound: true);
+        // General
+        m_General = asset.FindActionMap("General", throwIfNotFound: true);
+        m_General_ReloadGame = m_General.FindAction("ReloadGame", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -750,6 +869,39 @@ public partial class @GameInputActions : IInputActionCollection2, IDisposable
         }
     }
     public CrateActions @Crate => new CrateActions(this);
+
+    // General
+    private readonly InputActionMap m_General;
+    private IGeneralActions m_GeneralActionsCallbackInterface;
+    private readonly InputAction m_General_ReloadGame;
+    public struct GeneralActions
+    {
+        private @GameInputActions m_Wrapper;
+        public GeneralActions(@GameInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ReloadGame => m_Wrapper.m_General_ReloadGame;
+        public InputActionMap Get() { return m_Wrapper.m_General; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(GeneralActions set) { return set.Get(); }
+        public void SetCallbacks(IGeneralActions instance)
+        {
+            if (m_Wrapper.m_GeneralActionsCallbackInterface != null)
+            {
+                @ReloadGame.started -= m_Wrapper.m_GeneralActionsCallbackInterface.OnReloadGame;
+                @ReloadGame.performed -= m_Wrapper.m_GeneralActionsCallbackInterface.OnReloadGame;
+                @ReloadGame.canceled -= m_Wrapper.m_GeneralActionsCallbackInterface.OnReloadGame;
+            }
+            m_Wrapper.m_GeneralActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @ReloadGame.started += instance.OnReloadGame;
+                @ReloadGame.performed += instance.OnReloadGame;
+                @ReloadGame.canceled += instance.OnReloadGame;
+            }
+        }
+    }
+    public GeneralActions @General => new GeneralActions(this);
     public interface IPlayerMovesActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -769,5 +921,9 @@ public partial class @GameInputActions : IInputActionCollection2, IDisposable
     public interface ICrateActions
     {
         void OnExplode(InputAction.CallbackContext context);
+    }
+    public interface IGeneralActions
+    {
+        void OnReloadGame(InputAction.CallbackContext context);
     }
 }

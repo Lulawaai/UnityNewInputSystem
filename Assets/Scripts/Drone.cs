@@ -10,6 +10,9 @@ public class Drone : MonoBehaviour
 	[SerializeField] private GameObject _camDrone;
 	[SerializeField] private Rigidbody _rBd;
 
+	[SerializeField] private UIManager _uiManager;
+
+
 	public void DroneMove(Vector2 move)
 	{
 		Vector2 direction;
@@ -22,11 +25,13 @@ public class Drone : MonoBehaviour
 	public void CameraDroneOn()
 	{
 		_camDrone.SetActive(true);
+		_uiManager.ThrustON();
 	}
 
 	public void CameraDroneOFF()
 	{
 		_camDrone.SetActive(false);
+		_uiManager.ThrustOFF();
 	}
 
 	public void Thrust()
